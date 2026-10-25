@@ -14,9 +14,38 @@
     height: 50px;
 }
 
-#pokemon-container {
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 65vh;
+}
+
+.main-container {
     flex: 1;
-    min-height: 64vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: blanchedalmond;
+    gap: 40px;
+    padding: 20px 400px;
+}
+
+.pokemon-card {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    text-align: center; 
+    cursor: pointer;  
+}
+
+.pokemon-card img {
+    width: 100px;
+    height: auto;
+}
+
+.pokemon-card h2 {
+    font-size: 20px;
+    text-transform: capitalize;
 }
 
 .main-footer {
