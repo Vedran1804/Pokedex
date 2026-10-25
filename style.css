@@ -29,24 +29,57 @@ body {
     padding: 20px 400px;
 }
 
-.pokemon-card {
-    background-color: white;
-    width: 200px;
-    height: 200px;
-    border-radius: 12px;
-    text-align: center; 
-    cursor: pointer;  
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: lightgray;
 }
 
-.pokemon-card img {
+.logo {
+    height: 100px;
+}
+
+.logo1 {
+    height: 50px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 65vh;
+}
+
+.main-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: blanchedalmond;
+    gap: 40px;
+}
+
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+#search-bar {
+    width: 150px;
+    height: 50px;
+    border-radius: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#pokemonDialog img {
     width: 100px;
     height: auto;
 }
 
-.pokemon-card h2 {
-    font-size: 20px;
-    text-transform: capitalize;
-}
 
 .main-footer {
     display: flex;

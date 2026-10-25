@@ -19,14 +19,26 @@ async function fetchPokemonDetails(url) {
     renderPokemon(pokemon);
 }
 
-function renderPokemon(pokemon) {
+function renderPokemon(pokemon, index) {
     let container = document.getElementById("pokemon-container");
 
-    container.innerHTML += `
-       <div class="pokemon-card"> <p>#${pokemon.id}</p>
-       <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
-       <h2>${pokemon.name}</h2>
-       </div>`;
+    container.innerHTML += createPokemonCardTemplate(pokemon, index);
+}
+
+
+
+function openModal(pokemonId) {
+    let dialog = document.getElementById("pokemonDialog");
+    let pokemon = allPokemons[index];
+
+    dialog.innerHTML = getPokemonDialogTemplate(pokemon);
+    dialog.showModal();
+}
+
+
+function closeModal() {
+    let dialog = document.getElementById("pokemonDialog");
+    dialog.close();
 }
 
 fetchPokemonList();
