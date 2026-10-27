@@ -99,7 +99,7 @@ body {
     height: 50px;
     border-radius: 0;
     font-size: 16px;
-    cursor:default;
+    cursor: text;
 }
 
 .pokemon-card {
@@ -120,6 +120,7 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
+    font-weight: 700;
 }
 
 
@@ -129,5 +130,5 @@ body {
 
 .pokemon-stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr auto;
 }

@@ -27,6 +27,7 @@ function getPokemonDialogTemplate(pokemon) {
       <p>Height:${pokemon.height} m</p>
       <p>Weight: ${pokemon.weight} kg</p>
       <p>Defense: ${pokemon.stats.find((s) => s.stat.name === "defense").base_stat}</p>
+      <p>Attack: ${pokemon.stats.find((s) => s.stat.name === "attack").base_stat}</p>
       </div>
       `;
 }

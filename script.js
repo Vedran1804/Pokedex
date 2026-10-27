@@ -43,3 +43,15 @@ function closePokemonModal() {
 }
 
 fetchPokemonList();
+
+function filterPokemons() {
+    let search = document.getElementById("search-bar").value.toLowerCase();
+    let container = document.getElementById("pokemon-container");
+    container.innerHTML = "";
+
+    for (let i = 0;  i < allPokemons.length; i++ ) { 
+      if (allPokemons[i].name.toLowerCase().includes(search)) {
+        renderPokemon(allPokemons[i], i);
+      }
+    }
+}
