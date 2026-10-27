@@ -16,7 +16,8 @@ async function fetchPokemonDetails(url) {
 
     allPokemons.push(pokemon);
 
-    renderPokemon(pokemon);
+    let index = allPokemons.length - 1;
+    renderPokemon(pokemon, index);
 }
 
 function renderPokemon(pokemon, index) {
@@ -27,7 +28,7 @@ function renderPokemon(pokemon, index) {
 
 
 
-function openModal(pokemonId) {
+function openPokemonModal(index) {
     let dialog = document.getElementById("pokemonDialog");
     let pokemon = allPokemons[index];
 
@@ -36,7 +37,7 @@ function openModal(pokemonId) {
 }
 
 
-function closeModal() {
+function closePokemonModal() {
     let dialog = document.getElementById("pokemonDialog");
     dialog.close();
 }

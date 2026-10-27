@@ -15,9 +15,9 @@ function getPokemonDialogTemplate(pokemon) {
     let image = pokemon.sprites.front_default;
 
     return `
-      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <span class="close-btn" onclick="closePokemonModal()">&times;</span>
       <p>#${pokemon.id}</p>
-      <img src="${image}" alt="${name}"
+      <img src="${image}" alt="${name}">
       <h2>${name}</h2>
       <p>Height: ${pokemon.height}</p>
       `;
