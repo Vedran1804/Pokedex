@@ -75,8 +75,13 @@ body {
     cursor: pointer;
 }
 
-#pokemonModal img {
-    width: 100px;
+#pokemonDialog {
+    font-size: 15px;
+    width: 300px;
+}
+
+#pokemonDialog img {
+    width:150px;
     height: auto;
 }
 
@@ -102,3 +107,27 @@ body {
     cursor: pointer;
 }
 
+.pokemon-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+
+.close-btn {
+    cursor: pointer;
+}
+
+.pokemon-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

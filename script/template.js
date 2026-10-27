@@ -15,10 +15,18 @@ function getPokemonDialogTemplate(pokemon) {
     let image = pokemon.sprites.front_default;
 
     return `
-      <span class="close-btn" onclick="closePokemonModal()">&times;</span>
+      <div class="modal-header">
+      <span class="close-btn" onclick="closePokemonModal()">X</span>
       <p>#${pokemon.id}</p>
+      </div>
+      <div class="pokemon-data">
       <img src="${image}" alt="${name}">
       <h2>${name}</h2>
-      <p>Height: ${pokemon.height}</p>
+      </div>
+      <div class="pokemon-stats">
+      <p>Height:${pokemon.height} m</p>
+      <p>Weight: ${pokemon.weight} kg</p>
+      <p>Defense: ${pokemon.stats.find((s) => s.stat.name === "defense").base_stat}</p>
+      </div>
       `;
 }
