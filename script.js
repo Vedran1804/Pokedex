@@ -1,4 +1,7 @@
 let allPokemons = [];
+let offset = 0;
+const limit = 15;
+
 
 async function fetchPokemonList() {
     let url = "https://pokeapi.co/api/v2/pokemon?limit=21";
@@ -41,6 +44,8 @@ function closePokemonModal() {
     let dialog = document.getElementById("pokemonDialog");
     dialog.close();
 }
+
+
 
 fetchPokemonList();
 
