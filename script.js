@@ -4,7 +4,7 @@ const limit = 15;
 
 
 async function fetchPokemonList() {
-    let url = "https://pokeapi.co/api/v2/pokemon?limit=21";
+    let url = "https://pokeapi.co/api/v2/pokemon?limit=15";
     let response = await fetch(url);
     let data = await response.json();
 
@@ -45,7 +45,10 @@ function closePokemonModal() {
     dialog.close();
 }
 
-
+function loadMorePokemons() {
+    offset += limit;
+    fetchPokemonList();
+}
 
 fetchPokemonList();
 
