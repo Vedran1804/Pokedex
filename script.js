@@ -2,9 +2,13 @@ let allPokemons = [];
 let offset = 0;
 const limit = 15;
 
+function init() {
+    fetchPokemonList();
+}
+
 
 async function fetchPokemonList() {
-    let url = "https://pokeapi.co/api/v2/pokemon?limit=15";
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
     let response = await fetch(url);
     let data = await response.json();
 
@@ -30,11 +34,9 @@ function renderPokemon(pokemon, index) {
 }
 
 
-
 function openPokemonModal(index) {
     let dialog = document.getElementById("pokemonDialog");
     let pokemon = allPokemons[index];
-
     dialog.innerHTML = getPokemonDialogTemplate(pokemon);
     dialog.showModal();
 }
@@ -50,7 +52,6 @@ function loadMorePokemons() {
     fetchPokemonList();
 }
 
-fetchPokemonList();
 
 function filterPokemons() {
     let search = document.getElementById("search-bar").value.toLowerCase();
@@ -63,3 +64,5 @@ function filterPokemons() {
       }
     }
 }
+
+

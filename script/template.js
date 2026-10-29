@@ -4,6 +4,7 @@ function createPokemonCardTemplate(pokemon, index) {
 
     return `
     <button class="pokemon-card" data-id="card" role="button" aria-label="${name}" onclick="openPokemonModal(${index})">
+    <p>#${pokemon.id}</p>
     <img data-id="card-image" src="${image}" alt="${name}">
     <h2>${name}</h2>
     </button>
