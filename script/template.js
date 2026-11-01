@@ -27,7 +27,7 @@ function getPokemonDialogTemplate(pokemon) {
     }
 
     return `
-   
+      <div class="pokemon-dialog ${mainType}">
       <div class="modal-header">
       <span class="close-btn" onclick="closePokemonModal()">X</span>
       <p>#${pokemon.id}</p>
