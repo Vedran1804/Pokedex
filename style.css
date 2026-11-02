@@ -80,12 +80,11 @@ body {
     font-size: 15px;
     width: 400px;
     background-color: transparent;
-    
     overflow: hidden;
     border-radius: 20px;
 }
 
-#pokemonDialog img {
+#pokemonDialog img[data-id="dialog-image"] {
     width:150px;
     height: auto;
 }
@@ -143,7 +142,7 @@ body {
 
 .pokemon-data {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     
@@ -151,12 +150,15 @@ body {
 
 .dialog-change {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    gap: 100px;
 }
 
-.dialog-change img {
-    width: 200px;
+.dialog-arrow-btn img, 
+#prev-button img, 
+#next-button img {
+    width: 25px; 
     height: auto;
 }
 
