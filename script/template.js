@@ -14,7 +14,7 @@ function createPokemonCardTemplate(pokemon, index) {
     `; 
 }
 
-function getPokemonDialogTemplate(pokemon) {
+function getPokemonDialogTemplate(pokemon, index) {
     let name = pokemon.name.toUpperCase();
     let image = pokemon.sprites.front_default;
 
@@ -33,8 +33,14 @@ function getPokemonDialogTemplate(pokemon) {
       <p>#${pokemon.id}</p>
       </div>
       <div class="pokemon-data">
+      <div class="dialog-change">
+      <button data-id="prev-button" class="dialog-arrow-btn" onclick="changePokemon(${index}, -1)" aria-label="Previous pokemon">&lt;</button>
       <img src="${image}" alt="${name}">
+      <button data-id="next-button" class="dialog-arrow-btn" onclick="changePokemon(${index}, 1)" aria-label="Next pokemon">&gt;</button>
+      </div>
       <h2>${name}</h2>
+
+      
       <div class="types-container">
          ${typesHTML}
          </div>

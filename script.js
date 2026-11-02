@@ -37,7 +37,7 @@ function renderPokemon(pokemon, index) {
 function openPokemonModal(index) {
     let dialog = document.getElementById("pokemonDialog");
     let pokemon = allPokemons[index];
-    dialog.innerHTML = getPokemonDialogTemplate(pokemon);
+    dialog.innerHTML = getPokemonDialogTemplate(pokemon, index);
     dialog.showModal();
 }
 
