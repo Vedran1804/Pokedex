@@ -155,6 +155,11 @@ body {
     align-items: center;
 }
 
+.dialog-change img {
+    width: 200px;
+    height: auto;
+}
+
 .modal-header {
     display: flex;
     justify-content: space-between;

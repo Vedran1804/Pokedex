@@ -65,4 +65,11 @@ function filterPokemons() {
     }
 }
 
+function changePokemon(index, direction) {
+    let newIndex = index + direction;
+    if (newIndex >= 0 && newIndex < allPokemons.length) {
+        openPokemonModal(newIndex);
+    }
+}
+
 

@@ -34,9 +34,13 @@ function getPokemonDialogTemplate(pokemon, index) {
       </div>
       <div class="pokemon-data">
       <div class="dialog-change">
-      <button data-id="prev-button" class="dialog-arrow-btn" onclick="changePokemon(${index}, -1)" aria-label="Previous pokemon">&lt;</button>
+      <button data-id="prev-button" class="dialog-arrow-btn" onclick="changePokemon(${index}, -1)" aria-label="Previous pokemon">
+         <img src="img/arrow-left.png" alt="Previous">
+      </button>
       <img src="${image}" alt="${name}">
-      <button data-id="next-button" class="dialog-arrow-btn" onclick="changePokemon(${index}, 1)" aria-label="Next pokemon">&gt;</button>
+      <button data-id="next-button" class="dialog-arrow-btn" onclick="changePokemon(${index}, 1)" aria-label="Next pokemon">
+          <img src="img/arrow-right.png" alt="Next">
+      </button>
       </div>
       <h2>${name}</h2>
 
