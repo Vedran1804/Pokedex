@@ -58,13 +58,19 @@ function filterPokemons() {
     let container = document.getElementById("pokemon-container");
     container.innerHTML = "";
 
-    for (let i = 0;  i < allPokemons.length; i++ ) { 
-      if (allPokemons[i].name.toLowerCase().includes(search)) {
-        renderPokemon(allPokemons[i], i);
-      }
+    let foundCount = 0; 
+
+    for (let i = 0; i < allPokemons.length; i++) { 
+        if (allPokemons[i].name.toLowerCase().includes(search)) {
+            renderPokemon(allPokemons[i], i);
+            foundCount++;
+        }
+    }
+
+    if (foundCount === 0) {
+        container.innerHTML = `<p class="no-pokemon-found">No Pokemon</p>`;
     }
 }
-
 function changePokemon(index, direction) {
     let newIndex = index + direction;
     if (newIndex >= 0 && newIndex < allPokemons.length) {
