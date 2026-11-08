@@ -51,6 +51,16 @@ function closePokemonModal() {
     document.body.style.overflow = "auto";
 }
 
+let dialog = document.getElementById("pokemonDialog");
+
+dialog.addEventListener('click', (event) => {
+   
+    if (event.target === dialog) {
+        closePokemonModal();
+    }
+});
+
+
 function loadMorePokemons() {
     offset += limit;
     fetchPokemonList();
