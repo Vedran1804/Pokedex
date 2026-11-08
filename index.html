@@ -13,19 +13,19 @@
 <body onload="init()">
     <header class="head">
         <img class="logo" src="img/logo.png" alt="Logo"/>
-       <input type="text" id="search-bar" oninput="filterPokemons()" placeholder="Search...">
+       <input type="text" id="search-bar" data-id="search-input" oninput="filterPokemons()" placeholder="Search...">
         <img class="logo1" src="img/pokedex.png" alt="Pokedex"/>
     </header>
     
     <main class="main-container" id="pokemon-container" data-id="content" ></main>
 
-    <dialog id="pokemonDialog" data-id="dialog"></dialog>
+    <dialog id="pokemonDialog" data-id="dialog" aria-label="Pokemon details dialog"></dialog>
 
     <footer class="main-footer">
         <img class="logo" src="img/logo.png" alt="Logo"/>
 
         <div class="load-more-container">
-            <button id="loadMoreBtn" data-id="load-more-button"  onclick="loadMorePokemons()">Load More</button>
+            <button id="loadMoreBtn" data-id="load-more-button"  aria-label="Load more pokemons" onclick="loadMorePokemons()">Load More</button>
         </div>
         <img class="logo1" src="img/pokedex.png" alt="Pokedex"/>
     </footer>

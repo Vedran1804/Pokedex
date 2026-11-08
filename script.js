@@ -1,6 +1,6 @@
 let allPokemons = [];
 let offset = 0;
-const limit = 15;
+const limit = 20;
 
 function init() {
     fetchPokemonList();
@@ -39,12 +39,16 @@ function openPokemonModal(index) {
     let pokemon = allPokemons[index];
     dialog.innerHTML = getPokemonDialogTemplate(pokemon, index);
     dialog.showModal();
+
+    document.body.style.overflow = "hidden";
 }
 
 
 function closePokemonModal() {
     let dialog = document.getElementById("pokemonDialog");
     dialog.close();
+
+    document.body.style.overflow = "auto";
 }
 
 function loadMorePokemons() {
@@ -58,6 +62,7 @@ function filterPokemons() {
     let container = document.getElementById("pokemon-container");
     container.innerHTML = "";
 
+
     let foundCount = 0; 
 
     for (let i = 0; i < allPokemons.length; i++) { 
@@ -68,9 +73,11 @@ function filterPokemons() {
     }
 
     if (foundCount === 0) {
-        container.innerHTML = `<p class="no-pokemon-found">No Pokemon</p>`;
+        container.innerHTML = `<p class="no-pokemon-found" data-id="not-found">No Pokemon</p>`;
     }
 }
+
+
 function changePokemon(index, direction) {
     let newIndex = index + direction;
     if (newIndex >= 0 && newIndex < allPokemons.length) {
