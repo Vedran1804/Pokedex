@@ -214,3 +214,24 @@ body {
 .pokemon-card.ice { background-color: #51c4e7; }
 .pokemon-card.dragon { background-color: #f16e57;}
 
+
+/* -------------------- MEDIA QUERIES -------------------- */
+
+@media (max-width: 1024px) {
+    .main-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 40px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .head, .main-footer {
+        padding: 10px 20px;
+    }
+}
