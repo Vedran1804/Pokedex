@@ -86,10 +86,8 @@ body {
     border-radius: 20px;
 }
 
-#pokemonDialog img[data-id="dialog-image"] {
-    width:150px;
-    height: auto;
-}
+
+
 
 .pokemon-dialog {
     padding: 25px;
@@ -150,11 +148,16 @@ body {
     
 }
 
+.pokemon-data img {
+    width: 150px;
+    height: auto;
+}
+
 .dialog-change {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 100px;
+    gap: 70px;
 }
 
 .dialog-arrow-btn img, 
@@ -190,6 +193,11 @@ body {
     padding: 20px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pokemon-card img {
+    width: 120px;
+    height: auto;
 }
 
 .pokemon-card:hover {
@@ -234,4 +242,10 @@ body {
     .head, .main-footer {
         padding: 10px 20px;
     }
+
+    #pokemonDialog {
+        width: 90vw;
+        max-width: 360px;
+    }
 }
+
