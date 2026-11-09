@@ -8,6 +8,11 @@ function init() {
 
 
 async function fetchPokemonList() {
+
+    let spinner = document.getElementById("loading-spinner");
+    if (spinner) spinner.classList.remove("d-none");
+
+    try {
     let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
     let response = await fetch(url);
     let data = await response.json();
@@ -15,8 +20,13 @@ async function fetchPokemonList() {
     for (let i = 0; i < data.results.length; i++) {
         await fetchPokemonDetails(data.results[i].url);
     }
+    } catch (error) {
+        console.error("Loading Error:", error );
+    } finally {
+        if (spinner) spinner.classList.add("d-none")
+    }
 }
-
+ 
 async function fetchPokemonDetails(url) {
     let response = await fetch(url);
     let pokemon = await response.json();
