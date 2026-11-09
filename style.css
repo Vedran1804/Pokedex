@@ -80,7 +80,7 @@ body {
     border: 5px solid #f3f3f3;
     border-top: 5px solid #3b4cca;
     border-radius: 50%;
-    animation: spin 1s;
+    animation: spin 2s;
 }
 
 @keyframes spin {

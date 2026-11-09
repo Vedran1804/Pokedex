@@ -1,3 +1,6 @@
+const body = document.body;
+const loadingSpinnerRef = document.getElementById("loading-spinner");
+
 let allPokemons = [];
 let offset = 0;
 const limit = 20;
@@ -7,23 +10,31 @@ function init() {
 }
 
 
-async function fetchPokemonList() {
+function showLoadingSpinner() {
+    body.classList.add("overflow-hidden");
+    loadingSpinnerRef.classList.remove("d-none");
+}
 
-    let spinner = document.getElementById("loading-spinner");
-    if (spinner) spinner.classList.remove("d-none");
+function hideLoadingSpinner() {
+    body.classList.remove("overflow-hidden");
+    loadingSpinnerRef.classList.add("d-none");
+}
+
+async function fetchPokemonList() {
+    showLoadingSpinner();
 
     try {
-    let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
-    let response = await fetch(url);
-    let data = await response.json();
+        let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
+        let response = await fetch(url);
+        let data = await response.json();
 
-    for (let i = 0; i < data.results.length; i++) {
-        await fetchPokemonDetails(data.results[i].url);
-    }
+        for (let i = 0; i < data.results.length; i++) {
+            await fetchPokemonDetails(data.results[i].url);
+        }
     } catch (error) {
-        console.error("Loading Error:", error );
+        console.error("Loading Error:", error);
     } finally {
-        if (spinner) spinner.classList.add("d-none")
+        hideLoadingSpinner();
     }
 }
  
