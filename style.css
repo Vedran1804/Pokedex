@@ -271,7 +271,7 @@ body {
 
 
 
-@media (min-width: 451px) and (max-width: 600px) {
+@media (min-width: 450px) and (max-width: 600px) {
     .logo-img {
         height: 80px;
     }
@@ -283,21 +283,20 @@ body {
     }
 
     .head {
-        justify-content: center;
+        justify-content: space-between;
     }
-    .head  {
-       .logo,  .logo1  {
-             display: none !important;
-          }   
+    
+
+    .logo {
+        width: 70px;
+        height: auto;
     }
 
-    
-    .main-footer  {
-       .logo,  .logo1  {
-             display: none !important;
-          } 
-         
+    .logo1 {
+        width:28px;
+        height: auto;
     }
+
 
     .pokemon-card {
         width: 70%;              
@@ -316,7 +315,7 @@ body {
     }
 }
 
-@media  (min-width: 300px) and (max-width: 450px)  {
+@media  (min-width: 300px) and (max-width: 449.9px)  {
     .head  {
        .logo,  .logo1  {
              display: none !important;
