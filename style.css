@@ -31,9 +31,9 @@ body {
     background-color: blanchedalmond;
     gap: 20px;
     padding: 20px;
-    width: ;
     margin: 0;          
 }
+
 
 .head {
     display: flex;
@@ -43,9 +43,11 @@ body {
     background-color: lightgray;
 }
 
+
 .logo {
     height: 100px;
 }
+
 
 .logo1 {
     height: 50px;
@@ -90,19 +92,15 @@ body {
     display: none !important;
 }
 
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    margin: 0;  
-}
+
 
 .main-footer {
     display: flex;
     justify-content: space-around;
     align-items:center;
     background-color: lightgrey;
-    margin: 0;  
+    margin: 0;
+    padding: 15px;   
 }
 
 
@@ -217,7 +215,7 @@ body {
 
 
 .pokemon-card {
-    width: 300px;
+    width: 400px;
     background-color: #f0f0f0;
     border: none;
     border-radius: 15px;
@@ -255,7 +253,7 @@ body {
 
 
 /* -------------------- MEDIA QUERIES -------------------- */
-@media (max-width: 1380px) {
+@media (min-width: 601px) and (max-width: 1380px) {
     .search-bar {
         display: flex;
         align-items: center;
@@ -271,41 +269,9 @@ body {
     }
 }
 
-@media (max-width: 1200px) {
-    .logo-text {
-        display: none;
-    }
-}
 
-@media (max-width: 915px) {
-    .single-cards {
-        height: 220px;
-        width: 100%;
-        max-width: 280px;
-    }
 
-    .poke-name {
-        height: 25px;
-        font-size: 22px;
-    }
-
-    .poke-sprite {
-        height: 100px;
-        width: 100px;
-        margin: 0;
-    }
-}
-
-@media (max-width: 800px) {
-    .search-bar {
-        flex-direction: column;
-        justify-content: center;
-        height: auto;
-        width: 100%;
-    }
-}
-
-@media (max-width: 700px) {
+@media (min-width: 451px) and (max-width: 600px) {
     .logo-img {
         height: 80px;
     }
@@ -316,13 +282,30 @@ body {
         max-width: 250px;
     }
 
+    .head {
+        justify-content: center;
+    }
+    .head  {
+       .logo,  .logo1  {
+             display: none !important;
+          }   
+    }
+
+    
+    .main-footer  {
+       .logo,  .logo1  {
+             display: none !important;
+          } 
+         
+    }
+
     .pokemon-card {
-        width: 42%;              /* Zauzimaju oko pola reda svaka */
+        width: 70%;              
         max-width: 260px;
     }
 
     .dialog-change {
-        gap: 15px !important;    /* Umjesto 70px, razmak je sada prilagođen mobitelu */
+        gap: 15px !important;    
         width: 100%;
         box-sizing: border-box;
     }
@@ -333,20 +316,35 @@ body {
     }
 }
 
-@media (max-width: 330px) {
-    .main-header {
-        flex-direction: column;
-        padding-top: 10px;
-        gap: 10px;
+@media  (min-width: 300px) and (max-width: 450px)  {
+    .head  {
+       .logo,  .logo1  {
+             display: none !important;
+          } 
+
+        justify-content: center;  
+         
+    }
+
+    .pokemon-card {
+        width: 80%;              
+        max-width: 260px;
     }
 
     .main-footer {
         justify-content: center;
     }
 
+
+    .main-footer  {
+       .logo,  .logo1  {
+             display: none !important;
+          } 
+        
+    }
+
     .dialog-change {
-        gap: 15px !important;    /* Umjesto 70px, razmak je sada prilagođen mobitelu */
-        width: 100%;
+        gap: 15px !important;    
         box-sizing: border-box;
     }
     .search-bar {
