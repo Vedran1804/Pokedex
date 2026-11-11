@@ -21,13 +21,18 @@ body {
     margin: 1;
 }
 
+
 .main-container {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+   flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;    /* <--- OVO JE KLJUČNO! Sprečava da se kartice razvlače po visini */
     background-color: blanchedalmond;
-    gap: 40px;
-    padding: 20px 400px;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1150px;
+    margin: 0 auto;          
 }
 
 .head {
@@ -52,13 +57,6 @@ body {
     min-height: 65vh;
 }
 
-.main-container {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: blanchedalmond;
-    gap: 40px;
-}
 
 .loader {
     position: fixed;
@@ -256,28 +254,102 @@ body {
 
 
 /* -------------------- MEDIA QUERIES -------------------- */
+@media (max-width: 1380px) {
+    .search-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 200px;
+        width: 600px;
+        gap: 15px;
+    }
 
-@media (max-width: 1024px) {
-    .main-container {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 20px 40px;
-        gap: 20px;
+    .logo-text {
+        height: 60px;
+        width: 400px;
     }
 }
 
-@media (max-width: 768px) {
-    .main-container {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-
-    .head, .main-footer {
-        padding: 10px 20px;
-    }
-
-    #pokemonDialog {
-        width: 90vw;
-        max-width: 360px;
+@media (max-width: 1200px) {
+    .logo-text {
+        display: none;
     }
 }
 
+@media (max-width: 915px) {
+    .single-cards {
+        height: 220px;
+        width: 100%;
+        max-width: 280px; /* Osigurava da se kartica lijepo prilagodi na manjim ekranima */
+    }
+
+    .poke-name {
+        height: 25px;
+        font-size: 22px;
+    }
+
+    .poke-sprite {
+        height: 100px;
+        width: 100px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .search-bar {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .logo-img {
+        height: 80px;
+    }
+
+    input {
+        height: 40px;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .pokemon-card {
+        width: 42%;              /* Zauzimaju oko pola reda svaka */
+        max-width: 260px;
+    }
+
+    .dialog-change {
+        gap: 15px !important;    /* Umjesto 70px, razmak je sada prilagođen mobitelu */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .search-btn {
+        height: 40px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 330px) {
+    .main-header {
+        flex-direction: column;
+        padding-top: 10px;
+        gap: 10px;
+    }
+
+    .main-footer {
+        justify-content: center;
+    }
+
+    .dialog-change {
+        gap: 15px !important;    /* Umjesto 70px, razmak je sada prilagođen mobitelu */
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .search-bar {
+        width: 100%;
+        max-width: 300px;
+    }
+}
