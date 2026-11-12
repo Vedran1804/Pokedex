@@ -113,6 +113,16 @@ body {
     margin: 0;
     padding: 15px;   
 }
+.back-to-top-card {
+    background-color: blanchedalmond;
+    
+}
+
+.back-to-top-card img{
+    width: 28px;
+    height: auto;
+    outline: none;
+}
 
 
 #search-bar {

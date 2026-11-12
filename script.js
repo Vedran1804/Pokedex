@@ -31,6 +31,7 @@ async function fetchPokemonList() {
         for (let i = 0; i < data.results.length; i++) {
             await fetchPokemonDetails(data.results[i].url);
         }
+        renderBackToTopCard();
     } catch (error) {
         console.error("Loading Error:", error);
     } finally {
@@ -114,6 +115,15 @@ function changePokemon(index, direction) {
     if (newIndex >= 0 && newIndex < allPokemons.length) {
         openPokemonModal(newIndex);
     }
+}
+
+function renderBackToTopCard() {
+    let container = document.getElementById("pokemon-container");
+    let existingCard = document.querySelector('.back-to-top-card');
+    if (existingCard) {
+        existingCard.remove();
+    }
+    container.innerHTML += getBackToTopCardTemplate();
 }
 
 

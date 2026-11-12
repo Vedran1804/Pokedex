@@ -60,3 +60,18 @@ function getPokemonDialogTemplate(pokemon, index) {
       
       `;
 }
+
+function getBackToTopCardTemplate() {
+    return `
+    <button class="back-to-top-card" onclick="scrollToTop()" role="button" aria-label="Back to top">
+        <img src="img/arrow-up.png" alt="top">
+    </button>
+    `;
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
