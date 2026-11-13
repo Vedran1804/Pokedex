@@ -106,7 +106,10 @@ function filterPokemons() {
     }
 
     if (foundCount === 0) {
-        container.innerHTML = `<p class="no-pokemon-found" data-id="not-found">No Pokemon</p>`;
+        container.innerHTML = `<div class="no-pokemon-box">
+                <p class="no-pokemon-found" data-id="not-found">No Pokemon</p>
+                <img src="img/no-pokemon.png" alt="No Pokemon found" class="no-pokemon-img">
+            </div>`;
     } else {
         renderBackToTopCard();
     }
