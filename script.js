@@ -32,6 +32,7 @@ async function fetchPokemonList() {
             await fetchPokemonDetails(data.results[i].url);
         }
         renderBackToTopCard();
+
     } catch (error) {
         console.error("Loading Error:", error);
     } finally {
@@ -106,6 +107,8 @@ function filterPokemons() {
 
     if (foundCount === 0) {
         container.innerHTML = `<p class="no-pokemon-found" data-id="not-found">No Pokemon</p>`;
+    } else {
+        renderBackToTopCard();
     }
 }
 

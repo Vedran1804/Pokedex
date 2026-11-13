@@ -114,12 +114,16 @@ body {
     padding: 15px;   
 }
 .back-to-top-card {
-    background-color: blanchedalmond;
-    
+    background-color: transparent;
+    border: none;
+    position: fixed;
+    bottom: 130px;          
+    right: 30px;           
+    z-index: 1000;
 }
 
 .back-to-top-card img{
-    width: 28px;
+    width: 40px;
     height: auto;
     outline: none;
 }
