@@ -31,7 +31,7 @@ async function fetchPokemonList() {
         for (let i = 0; i < data.results.length; i++) {
             await fetchPokemonDetails(data.results[i].url);
         }
-        renderBackToTopCard();
+        
 
     } catch (error) {
         console.error("Loading Error:", error);
@@ -110,8 +110,6 @@ function filterPokemons() {
                 <p class="no-pokemon-found" data-id="not-found">No Pokemon</p>
                 <img src="img/no-pokemon.png" alt="No Pokemon found" class="no-pokemon-img">
             </div>`;
-    } else {
-        renderBackToTopCard();
     }
 }
 
@@ -123,13 +121,6 @@ function changePokemon(index, direction) {
     }
 }
 
-function renderBackToTopCard() {
-    let container = document.getElementById("pokemon-container");
-    let existingCard = document.querySelector('.back-to-top-card');
-    if (existingCard) {
-        existingCard.remove();
-    }
-    container.innerHTML += getBackToTopCardTemplate();
-}
+
 
 
