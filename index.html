@@ -22,10 +22,8 @@
     </header>
     
     <main class="main-container" id="pokemon-container" data-id="content"></main>
+
     
-    <button class="back-to-top-card" onclick="scrollToTop()" role="button" aria-label="Back to top">
-        <img src="img/arrow-up.png" alt="top">
-    </button>
     
 
     <div id="loading-spinner" class="loader d-none">
@@ -40,7 +38,11 @@
         <div class="load-more-container">
             <button id="loadMoreBtn" data-id="load-more-button"  aria-label="Load more pokemons" onclick="loadMorePokemons()">Load More</button>
         </div>
-        <img class="logo1" src="img/pokedex.png" alt="Pokedex"/>
+        <div class="buttons">
+        <button class="back-to-top-card" onclick="scrollToTop()" role="button" aria-label="Back to top">
+        <img src="img/arrow-up.png" alt="top">
+        </div>
+    </button>
     </footer>
 </body>
 </html>

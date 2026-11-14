@@ -31,7 +31,6 @@ async function fetchPokemonList() {
         for (let i = 0; i < data.results.length; i++) {
             await fetchPokemonDetails(data.results[i].url);
         }
-        
 
     } catch (error) {
         console.error("Loading Error:", error);
