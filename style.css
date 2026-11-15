@@ -96,7 +96,7 @@ body {
 .pokemon-card.ice { background-color: #51c4e7; }
 .pokemon-card.dragon { background-color: #f16e57;}
 
-.back-to-top-card {
+.back-to-top {
     background-color: transparent;
     border: none;          
     z-index: 9999;
@@ -106,11 +106,11 @@ body {
     bottom: 130px;
 }
 
-.back-to-top-card:hover {
+.back-to-top:hover {
     transform: scale(1.1);
 }
 
-.back-to-top-card img{
+.back-to-top img{
     width: 40px;
     height: auto;
     outline: none;
@@ -373,11 +373,11 @@ body {
         max-width: 260px;
     }
 
-    .back-to-top-card {
+    .back-to-top {
         right: 0;
     }
 
-    .back-to-top-card img{
+    .back-to-top img{
     width: 35px;
     height: auto;
     outline: none;
