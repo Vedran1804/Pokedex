@@ -96,6 +96,26 @@ body {
 .pokemon-card.ice { background-color: #51c4e7; }
 .pokemon-card.dragon { background-color: #f16e57;}
 
+.back-to-top-card {
+    background-color: transparent;
+    border: none;          
+    z-index: 9999;
+    cursor: pointer;
+    position: fixed;
+    right: 10px;
+    bottom: 130px;
+}
+
+.back-to-top-card:hover {
+    transform: scale(1.1);
+}
+
+.back-to-top-card img{
+    width: 40px;
+    height: auto;
+    outline: none;
+}
+
 
 /* -------------------- NO POKEMON -------------------- */
 
@@ -178,22 +198,7 @@ body {
     justify-content: space-around;
     gap: 100px;
 }
-.back-to-top-card {
-    background-color: transparent;
-    border: none;          
-    z-index: 9999;
-    cursor: pointer;
-}
 
-.back-to-top-card:hover {
-    transform: scale(1.1);
-}
-
-.back-to-top-card img{
-    width: 40px;
-    height: auto;
-    outline: none;
-}
 
 #loadMoreBtn {
     width: 100px;
@@ -353,21 +358,34 @@ body {
 }
 
 @media  (min-width: 300px) and (max-width: 449.9px)  {
+    
     .head  {
-       .logo,  .logo1  {
-             display: none !important;
-          } 
-
         justify-content: center;
     }
-
+    
+    
+    .logo, .logo1  {
+             display: none !important;
+          } 
+   
     .pokemon-card {
         width: 80%;              
         max-width: 260px;
     }
 
-    .main-footer {
-        justify-content: center;
+    .back-to-top-card {
+        right: 0;
+    }
+
+    .back-to-top-card img{
+    width: 35px;
+    height: auto;
+    outline: none;
+    }
+
+    .dialog-change {
+        gap: 15px !important;    
+        box-sizing: border-box;
     }
 
     .buttons {
@@ -375,26 +393,20 @@ body {
         left: 80px;
     }
 
-    .back-to-top-card img{
-    width: 35px;
-    height: auto;
-    outline: none;
-}
 
-
-    .main-footer  {
-       .logo,  .logo1  {
-             display: none !important;
-          } 
-        
-    }
-
-    .dialog-change {
-        gap: 15px !important;    
-        box-sizing: border-box;
-    }
     .search-bar {
         width: 100%;
         max-width: 300px;
+    }
+
+   
+    .logo,  .logo1  {
+             display: none !important;
+          } 
+        
+    
+
+    .main-footer {
+        justify-content: center;
     }
 }
