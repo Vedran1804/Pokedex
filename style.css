@@ -265,12 +265,20 @@ body {
     gap: 70px;
 }
 
+.dialog-arrow-btn {
+    background-color: transparent;
+    border: none;
+}
+
 .dialog-arrow-btn img, 
 #prev-button img, 
 #next-button img {
     width: 25px; 
     height: auto;
+    cursor: pointer;
 }
+
+
 
 .modal-header {
     display: flex;

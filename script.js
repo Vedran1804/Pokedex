@@ -22,6 +22,8 @@ function hideLoadingSpinner() {
 
 async function fetchPokemonList() {
     showLoadingSpinner();
+    let loadMoreBtn = document.getElementById("loadMoreBtn");
+    if (loadMoreBtn) loadMoreBtn.disabled = true;
 
     try {
         let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
@@ -36,6 +38,7 @@ async function fetchPokemonList() {
         console.error("Loading Error:", error);
     } finally {
         hideLoadingSpinner();
+        if (loadMoreBtn) loadMoreBtn.disabled = false;
     }
 }
  
@@ -94,6 +97,12 @@ function filterPokemons() {
     let container = document.getElementById("pokemon-container");
     container.innerHTML = "";
 
+   
+    if (search.length > 0) {
+        if (loadMoreBtn) loadMoreBtn.classList.remove ("d-none");
+    } else {
+        if (loadMoreBtn) loadMoreBtn.classList.remove("d-none");
+    }
 
     let foundCount = 0; 
 
