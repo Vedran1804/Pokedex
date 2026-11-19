@@ -215,6 +215,16 @@ body {
     background-color: brown;
 }
 
+.impressum-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.impressum-link:hover {
+    text-decoration: underline;
+}
+
 
 
 /* -------------------- DIALOG -------------------- */
