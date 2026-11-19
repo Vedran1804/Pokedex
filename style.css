@@ -9,6 +9,7 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: "Roboto", sans-serif;
+    max-width: 1440px;
 }
 
 /* -------------------- HEADER -------------------- */
@@ -72,6 +73,11 @@ body {
 .pokemon-card img {
     width: 120px;
     height: auto;
+}
+
+.pokemon-card img:hover {
+    transform: scale(1.5);
+    transition: transform 0.25s ease;
 }
 
 .pokemon-card:hover {
@@ -277,7 +283,11 @@ body {
     height: auto;
     cursor: pointer;
 }
-
+.dialog-arrow-btn :hover, 
+#prev-button :hover, 
+#next-button :hover {
+    transform: scale(1.1);
+}
 
 
 .modal-header {

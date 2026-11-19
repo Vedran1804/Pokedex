@@ -124,9 +124,40 @@ function filterPokemons() {
 
 function changePokemon(index, direction) {
     let newIndex = index + direction;
-    if (newIndex >= 0 && newIndex < allPokemons.length) {
-        openPokemonModal(newIndex);
+    let total = allPokemons.length;
+
+    if (newIndex >= total) {
+        newIndex = 0;
+    } else if (newIndex < 0) {
+        newIndex = total - 1;
     }
+
+    openPokemonModal(newIndex);
+}
+
+let currentPokemonIndex = 0; 
+let currentPokemonsList = []; 
+
+function nextPokemon() {
+    currentPokemonIndex++;
+    
+    
+    if (currentPokemonIndex >= currentPokemonsList.length) {
+        currentPokemonIndex = 0;
+    }
+    
+    renderModal(currentPokemonsList[currentPokemonIndex]);
+}
+
+function prevPokemon() {
+    currentPokemonIndex--;
+    
+  
+    if (currentPokemonIndex < 0) {
+        currentPokemonIndex = currentPokemonsList.length - 1;
+    }
+    
+    renderModal(currentPokemonsList[currentPokemonIndex]);
 }
 
 
