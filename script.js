@@ -4,9 +4,16 @@ const loadingSpinnerRef = document.getElementById("loading-spinner");
 let allPokemons = [];
 let offset = 0;
 const limit = 20;
+let currentPokemons = [];
 
 function init() {
     fetchPokemonList();
+}
+
+function delay(ms) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, ms);
+    });
 }
 
 
@@ -32,6 +39,7 @@ async function fetchPokemonList() {
 
         for (let i = 0; i < data.results.length; i++) {
             await fetchPokemonDetails(data.results[i].url);
+            await delay(80);
         }
 
     } catch (error) {
@@ -47,22 +55,38 @@ async function fetchPokemonDetails(url) {
     let pokemon = await response.json();
 
     allPokemons.push(pokemon);
+    currentPokemons = allPokemons;
 
     let index = allPokemons.length - 1;
     renderPokemon(pokemon, index);
 }
 
+
 function renderPokemon(pokemon, index) {
     let container = document.getElementById("pokemon-container");
+    let name = pokemon.name.toUpperCase();
+    let image = pokemon.sprites.front_default;
+    let mainType = pokemon.types[0].type.name;
 
-    container.innerHTML += createPokemonCardTemplate(pokemon, index);
+    container.innerHTML += createPokemonCardTemplate(pokemon, index, name, image, mainType);
 }
-
 
 function openPokemonModal(index) {
     let dialog = document.getElementById("pokemonDialog");
-    let pokemon = allPokemons[index];
-    dialog.innerHTML = getPokemonDialogTemplate(pokemon, index);
+    let pokemon = currentPokemons[index];
+    if (!pokemon) return;
+
+    let name = pokemon.name.toUpperCase();
+    let image = pokemon.sprites.front_default;
+    let mainType = pokemon.types[0].type.name;
+
+    let typesHTML = '';
+    for (let i = 0; i < pokemon.types.length; i++) {
+        let typeName = pokemon.types[i].type.name;
+        typesHTML += `<span class="pokemon-type ${typeName}">${typeName}</span>`;
+    }
+
+    dialog.innerHTML = getPokemonDialogTemplate(pokemon, index, name, image, mainType, typesHTML);
     dialog.showModal();
 
     document.body.style.overflow = "hidden";
@@ -99,7 +123,7 @@ function filterPokemons() {
 
    
     if (search.length > 0) {
-        if (loadMoreBtn) loadMoreBtn.classList.remove ("d-none");
+        if (loadMoreBtn) loadMoreBtn.classList.add ("d-none");
     } else {
         if (loadMoreBtn) loadMoreBtn.classList.remove("d-none");
     }
@@ -161,5 +185,10 @@ function prevPokemon() {
 }
 
 
-
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 
