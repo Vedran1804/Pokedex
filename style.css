@@ -102,25 +102,7 @@ body {
 .pokemon-card.ice { background-color: #51c4e7; }
 .pokemon-card.dragon { background-color: #f16e57;}
 
-.back-to-top {
-    background-color: transparent;
-    border: none;          
-    z-index: 9999;
-    cursor: pointer;
-    position: relative;
-     
-    bottom: 10px;
-}
 
-.back-to-top:hover {
-    transform: scale(1.1);
-}
-
-.back-to-top img{
-    width: 40px;
-    height: auto;
-    outline: none;
-}
 
 
 /* -------------------- NO POKEMON -------------------- */
@@ -229,6 +211,26 @@ body {
 
 .impressum-link:hover {
     text-decoration: underline;
+}
+
+.back-to-top {
+    background-color: transparent;
+    border: none;          
+    z-index: 9999;
+    cursor: pointer;
+    position: relative;
+     
+    bottom: 10px;
+}
+
+.back-to-top:hover {
+    transform: scale(1.1);
+}
+
+.back-to-top img{
+    width: 40px;
+    height: auto;
+    outline: none;
 }
 
 
