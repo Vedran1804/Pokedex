@@ -14,20 +14,22 @@ body {
     min-height: 100vh;
     margin: 0 auto;
     font-family: "Roboto", sans-serif;
-    max-width: 1920px;
 }
 
 /* -------------------- HEADER -------------------- */
-
+.header {
+    width: 100%;
+    background-color: lightgray;
+}
 
 .head {
     width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: lightgray;
-
+    padding: 20px;    
 }
 
 
@@ -51,19 +53,22 @@ body {
 }
 
 /* -------------------- MAIN CONTAINER & CARDS -------------------- */
-
+.container {
+    width: 100%;
+    flex: 1;
+    background-color: blanchedalmond;
+}
 
 .main-container {
     width: 100%;
-    flex: 1;
+    max-width: 1440px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;    
-    background-color: blanchedalmond;
     gap: 20px;
     padding: 20px;
-    margin: 0;          
+    margin: 0 auto;          
 }
 
 
@@ -178,16 +183,22 @@ body {
 
 
 /* -------------------- FOOTER -------------------- */
+.footer {
+    width: 100%;
+    background-color: lightgrey;
+}
+
 
 .main-footer {
     width: 100%;
+    max-width: 1440px;
     display: flex;
     justify-content: space-between;
     align-items:center;
-    background-color: lightgrey;
-    margin: 0;
+    margin: 0 auto;
     padding: 15px;   
 }
+
 
 .buttons {
     display: flex;

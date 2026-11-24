@@ -15,14 +15,17 @@
 </head>
 
 <body onload="init()">
-    <header class="head">
+    <header class="header">
+      <div class="head">
         <img class="logo" src="img/logo.png" alt="Logo"/>
-       <input type="text" id="search-bar" data-id="search-input" oninput="filterPokemons()" placeholder="Search...">
+        <input type="text" id="search-bar" data-id="search-input" oninput="filterPokemons()" placeholder="Search...">
         <img class="logo1" src="img/pokedex.png" alt="Pokedex"/>
+      </div>
     </header>
     
-    <main class="main-container" id="pokemon-container" data-id="content">
-    
+    <main class="container">
+       <div class="main-container" id="pokemon-container" data-id="content">
+       </div>
     </main>
     
 
@@ -32,20 +35,21 @@
 
     <dialog id="pokemonDialog" data-id="dialog" aria-label="Pokemon details dialog"></dialog>
 
-    <footer class="main-footer">
+    <footer class="footer">
+       <div class="main-footer">
         <img class="logo" src="img/logo.png" alt="Logo"/>
 
         <div class="load-more-container">
             <button id="loadMoreBtn" data-id="load-more-button"  aria-label="Load more pokemons" onclick="loadMorePokemons()">Load More</button>
             <a href="impressum.html" class="impressum-link">Impressum</a>
-
         </div>
         
         
         <div class="buttons">
         <button class="back-to-top" onclick="scrollToTop()" role="button" aria-label="Back to top">
         <img src="img/arrow-up.png" alt="top"></button>
-     </div>
+        </div>
+       </div> 
     </footer>
 </body>
 </html>
